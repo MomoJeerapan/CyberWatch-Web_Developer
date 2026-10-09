@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .form-container-forgot {
+            display: none;
+            background-color: aliceblue;
+            color: #000;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container-forgot.active {
+            display: block;
+        }
+    </style>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="stylesheet" href="/css/templatemo-liberty-market.css">
+    <link rel="stylesheet" href="/css/owl.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/login.css">
+    <!--
+
+TemplateMo 577 Liberty Market
+
+-->
+</head>
+
+<body>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/home" class="logo">
+                            <img src="/images/logo.png" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/types">Type</a></li>
+                            <li><a href="/game">Game</a></li>
+                            <li><a href="/forum">Forum</a></li>
+                            <div>
+                                <li><a href="/register">Create Yours</a></li>
+                                <li><a href="/login" class="active">Login</a></li>
+                            </div>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-text">
+        <div class="page-heading normal-space">
+            <div class="container-center">
+                <div class="form-container">
+                    <h3 class="text-signin">Sign in</h3>
+                    <br>
+                    <form id="loginForm" method="POST" action="/auth" onsubmit="return validateLogin()">
+                        <div class="field-row">
+                            <div class="col-lg-12 form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" class="form-control"
+                                    placeholder="Enter your username" required>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="col-lg-12 form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control"
+                                    placeholder="Enter your password" required>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="col-lg-12 form-group">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> Show
+                                    Password
+                                </div>
+                                <div class="remember-me">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <label for="rememberMe">Remember Me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="col-lg-12 login-btn">
+                                <button type="submit" value="Login" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+                        <p class="mt-2"><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+                    </form>
+                    <!-- Modal for Forgot Password -->
+                </div>
+                <!-- Forgot Password Form -->
+                <div id="forgotPasswordForm" class="form-container-forgot">
+                    <h3 class="text-signin">Forgot Password</h3>
+                    <form id="forgotPassword" method="POST" action="/forgot-password">
+                        <div class="mb-3">
+                            <label for="forgotPasswordEmail" class="form-label">Enter your email</label>
+                            <input type="mail" name="mail" class="form-control" id="forgotPasswordEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <p class="mt-2"><a href="#" id="backToLogin">Back to Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- jQuery (ถ้าต้องการ) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // สลับไปยังฟอร์ม Forgot Password
+    document.getElementById('forgotPasswordLink').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('loginForm').classList.remove('active');
+        document.getElementById('forgotPasswordForm').classList.add('active');
+    });
+
+    // สลับกลับไปยังฟอร์ม Login
+    document.getElementById('backToLogin').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('forgotPasswordForm').classList.remove('active');
+        document.getElementById('loginForm').classList.add('active');
+    });
+</script>
+<!-- Bootstrap JS -->
+
+<script src="/jquery/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/js/isotope.min.js"></script>
+<script src="/js/owl-carousel.js"></script>
+
+<script src="/js/tabs.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/login.js"></script>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <title>Liberty NFT - Author Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="stylesheet" href="/css/templatemo-liberty-market.css">
+    <link rel="stylesheet" href="/css/owl.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/forum.css">
+    <link rel="stylesheet" href="/css/slider.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--
+
+TemplateMo 577 Liberty Market
+
+https://templatemo.com/tm-577-liberty-market
+
+-->
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <!-- <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div> -->
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/home" class="logo">
+                            <img src="/images/logo.png" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/types">Type</a></li>
+                            <li><a href="/game">Game</a></li>
+                            <li><a href="/forum" class="active">Forum</a></li>
+                            <li><a href="/about">About</a></li>
+                            <!-- Check if the user is logged in -->
+                            <% if (!isLoggedIn) { %>
+                                <!-- แสดง Login และ Register ถ้ายังไม่ได้เข้าสู่ระบบ -->
+                                <li id="login-register">
+                                <li><a href="/register">Create Yours</a></li>
+                                <li><a href="/login">Login</a></li>
+                                </li>
+                                <% } else { %>
+                                    <!-- แสดง Dropdown Profile ถ้าเข้าสู่ระบบแล้ว -->
+                                    <li id="profile-link" class="dropdown">
+                                        <a href="#" class="dropdown-toggle">
+                                            <%= username %>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/profile">My Profile</a></li>
+                                            <li><a href="/logout">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    <% } %>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <div class="header-text">
+        <div class="page-heading normal-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h6>ศูนย์การแสดงความคิดเห็น</h6>
+                        <h2>เพื่อให้ทุกคนมีส่วนร่วมในแบ่งปันข้อมูล,ช่วยเหลือและให้ความรู้</h2>
+                        <span><a href="#">Forum</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="author-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar ">
+                        <div class="header-forum">
+                            <h1>Cybercrime</h1>
+                            <p>ฟอรัมทางการ</p>
+                            <p>👤 <%= totalVisitorsToday %> </p>
+                        </div>
+                        <ul class="menu">
+                            <ul class="socialmenu">
+                                <li><a href="#">X (Twitter)</a></li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Youtube</a></li>
+                                <li><a href="https://www.instagram.com/_iamrawin/?hl=en">Instagram</a></li>
+                            </ul>
+                            <li class="menu-item">
+                                <span><a href="/forum" class="color-text">โพสต์ทั้งหมด</a></span>
+                            </li>
+                            <li class="menu-item">
+                                <span>Type of Cybercrime
+                                    <i class="arrow"></i>
+                                </span>
+                                <ul class="submenu">
+
+                                    <li>
+                                        <a href="/forum/type/Phishing"
+                                            class="<%= selectedType === 'Phishing' ? 'active' : '' %>">Phishing</a>
+                                    </li>
+                                    <li>
+                                        <a href="/forum/type/Ransomware"
+                                            class="<%= selectedType === 'Ransomware' ? 'active' : '' %>">Ransomware</a>
+                                    </li>
+                                    <li>
+                                        <a href="/forum/type/Social Engineering"
+                                            class="<%= selectedType === 'Social Engineering' ? 'active' : '' %>">Social
+                                            Engineering</a>
+                                    </li>
+                                    <li>
+                                        <a href="/forum/type/Malware"
+                                            class="<%= selectedType === 'Malware' ? 'active' : '' %>">Malware</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="header-forum">
+                        <div class="sidebar">
+                            <div class="search-section">
+                                <h1>โพสต์ทั้งหมด<% if (selectedType) { %> - <%= selectedType %>
+                                            <% } %>
+                                </h1>
+                                <div class="btn-write">
+                                    <div class="button-write">
+                                        <a href="<%= isLoggedIn ? '/write' : '/login' %>" class="plus-link">เพิ่ม</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="line"></div>
+                            <!-- Main Sidebar Section -->
+                            <div class="Forum-section">
+                                <!-- Filter Section -->
+                                <div class="filter-section">
+                                    <select class="filter">
+                                        <option value="lastest">ล่าสุด</option>
+                                    </select>
+                                </div>
+
+                                <!-- Articles/Forum -->
+                                <div class="content-area">
+                                    <% if (data.length> 0) { %>
+                                        <% data.forEach(post=> { %>
+                                            <div class="post-item">
+                                                <a href="/post/<%= post._id %>">
+                                                    <h3 class="color-text">
+                                                        <%= post.title %>
+                                                    </h3>
+                                                    <div class="formatted-date color-text"
+                                                        data-date="<%= post.created_date %>"></div>
+                                                </a>
+                                            </div>
+                                            <% }) %>
+                                                <% } else { %>
+                                                    <p>No posts available for this type.</p>
+                                                    <% } %>
+                                </div>
+
+
+                                <!-- Pagination Section -->
+                                <% if (totalPages > 1) { %>
+                                    <div class="pagination">
+                                        <% if (prevPage !== null) { %>
+                                            <a href="/forum/type/<%= selectedType %>?page=<%= prevPage %>">
+                                                <button class="page-btn">Previous</button>
+                                            </a>
+                                        <% } %>
+                                
+                                        <% for (let i = 1; i <= totalPages; i++) { %>
+                                            <a href="/forum/type/<%= selectedType %>?page=<%= i %>">
+                                                <button class="page-btn <%= i === current ? 'active' : '' %>">
+                                                    <%= i %>
+                                                </button>
+                                            </a>
+                                        <% } %>
+                                
+                                        <% if (nextPage !== null) { %>
+                                            <a href="/forum/type/<%= selectedType %>?page=<%= nextPage %>">
+                                                <button class="page-btn">Next</button>
+                                            </a>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © 2024 <a href="#">293-469</a> JeerapanRavidanai Co., Ltd. All rights reserved.
+                    &nbsp;&nbsp;
+                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com"
+                        target="_blank">293-469</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="/jquery/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/js/isotope.min.js"></script>
+<script src="/js/owl-carousel.js"></script>
+
+<script src="/js/tabs.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/forum.js"></script>
+<script src="/js/post.js"></script>
+<script src="/js/login.js"></script>
+</body>
+
+</html>

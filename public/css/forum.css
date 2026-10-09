@@ -1,0 +1,307 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.line {
+    border-bottom: 2px solid #797676;
+    margin-bottom: 3%;
+}
+
+.sidebar {
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.sidebar .header-forum {
+    background: #407bff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .header-forum h1 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.sidebar .header-forum p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #d3d3d3;
+    /* สีเทา */
+    border: 2px solid #aaa;
+    /* กรอบรอบๆ */
+    border-radius: 8px;
+    /* ทำให้มุมมน */
+    padding: 10px 5px;
+    transition: all 0.1s ease;
+    /* เพิ่มเอฟเฟกต์แบบนุ่มนวล */
+}
+
+.menu-item span {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.socialmenu {
+    margin-bottom: 5%;
+}
+
+.menu-item .submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+    display: none;
+}
+
+.menu-item .submenu li {
+    margin-bottom: 5px;
+}
+
+.menu-item .submenu li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.9em;
+}
+
+.menu-item .submenu li a:hover {
+    text-decoration: underline;
+    color: #3350af;
+}
+
+.menu-item span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.menu-item .arrow {
+    border: solid #666;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.menu-item.open .arrow {
+    transform: rotate(-135deg);
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+    display: none;
+}
+
+.menu-item.open .submenu {
+    display: block;
+}
+
+.search-section {
+    display: flex;
+    /* ใช้ Flexbox */
+    justify-content: space-between;
+    /* ทำให้ส่วนต่าง ๆ ชิดซ้ายและขวา */
+    align-items: center;
+    /* จัดให้อยู่กึ่งกลางในแนวแกน Y */
+}
+
+.btn-write .button-write a {
+    text-decoration: none;
+    /* ปรับให้ไม่มี underline */
+    color: inherit;
+    /* ใช้สีเหมือนกับพ่อ (parent) ถ้าจำเป็น */
+}
+
+.plus-link::before {
+    content: '+';
+    font-size: 20px; /* ปรับขนาดตามต้องการ */
+    margin-right: 5px; /* เพิ่มช่องว่างระหว่างเครื่องหมาย + และข้อความ */
+  }
+
+.search-section h1 {
+    color: #000;
+}
+
+.announcement-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #d3d3d3;
+    margin: 10px 0;
+}
+
+.announcement-box {
+    padding: 8px;
+    border: 1px solid #aaa;
+    margin: 0 5px;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+/* Content Section */
+.Forum-section {
+    padding: 10px;
+}
+
+.Forum-item {
+    display: flex;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.Forum-image {
+    background: #aaa;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.Forum-content {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #407bff;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.page-btn:hover {
+    background-color: #407bff;
+    color: white;
+}
+
+.filter {
+    border-radius: 5px;
+}
+
+.button-write a {
+    font-size: 20px;
+    color: #fff;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-write a:after {
+    width: 78%;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.button-write a:hover {
+    background-color: #407bff;
+    color: #000000;
+    border: 1px solid #407bff;
+}
+
+/* ทำให้ .content-area เป็นคอนเทนเนอร์ */
+.content-area {
+    width: 100%;
+    max-width: 1200px; /* จำกัดความกว้างของคอนเทนเนอร์ */
+    margin: 0 auto; /* จัดให้อยู่กลาง */
+    padding: 20px; /* เว้นระยะจากขอบ */
+  }
+  
+  .Forum-item {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* กำหนดรูปแบบให้กับโพสต์แต่ละอัน */
+  .post-item {
+    display: block; /* แสดงในแถวใหม่ */
+    margin-bottom: 20px; /* เว้นระยะระหว่างโพสต์ */
+    padding: 15px;
+    background-color: #f9f9f9; /* สีพื้นหลังของโพสต์ */
+    border: 1px solid #ddd; /* เส้นขอบโพสต์ */
+    border-radius: 8px; /* มุมมน */
+  }
+  
+  /* กำหนดรูปแบบให้กับลิงก์ภายในโพสต์ */
+  .post-item a {
+    text-decoration: none; /* ป้องกันเส้นใต้ของลิงก์ */
+    color: inherit; /* ใช้สีของข้อความที่ตั้งไว้ */
+  }
+  
+  /* รูปแบบสำหรับหัวข้อโพสต์ */
+  .post-item h3 {
+    color: #333; /* สีของหัวข้อโพสต์ */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  /* รูปแบบสำหรับวันที่ของโพสต์ */
+  .post-item span {
+    font-size: 0.9em;
+    color: #777; /* สีสำหรับวันที่ */
+  }
+  
+  /* สามารถเพิ่มรูปแบบอื่นๆ เช่น hover หรือ effects ต่างๆ ได้ */
+  .post-item:hover {
+    background-color: #f1f1f1; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    border-color: #ccc; /* เปลี่ยนสีเส้นขอบ */
+  }
+  
+  .post-item:hover {
+    background-color: #eaeaea; /* เปลี่ยนพื้นหลังเมื่อ hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้โพสต์เมื่อ hover */
+  }
+  
